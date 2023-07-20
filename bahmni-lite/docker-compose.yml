@@ -347,6 +347,13 @@ services:
       MYSQL_DATABASE: ${CRATER_ATOMFEED_DB_NAME:?}
       MYSQL_USER: ${CRATER_ATOMFEED_DB_USERNAME:?}
       MYSQL_PASSWORD: ${CRATER_ATOMFEED_DB_PASSWORD:?}
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8888:80
+    environment:
+      - PMA_ARBITRARY=1
 
 volumes:
   openmrs-data:
